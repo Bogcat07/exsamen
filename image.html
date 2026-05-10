@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <style>
+        body{
+            background-color: blue;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif);
+            background-size: 200px;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-attachment: fixed;
+        }
+        p{
+            font-size: 0.9in;
+            color: red;
+            background-image: url(https://images.ctfassets.net/hrltx12pl8hq/2RwJp3f9UiCnfWBEunwxOQ/f11257994853124d7b1a6a935e678c13/0_hero.webp?fit=fill&w=600&h=400);
+            background-size: cover;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        #d1{
+            background-image: url(https://wallpapers.com/images/featured/720p-nature-background-te0eo4yinuw49nh1.jpg);
+            background-size: cover;
+            border: hotpink 30px groove;
+        }
+        #d2{
+            border: solid 50px;
+            border-image: linear-gradient(orange,red,purple)30;
+            background-image: linear-gradient(rgba(255,165,0,0.2),rgba(255,0,0,0.2),rgba(128,0,128,0.4)),url(https://thumbs.dreamstime.com/b/enchanted-forest-path-serene-green-nature-background-relaxation-eco-projects-vibrant-hues-soft-light-ideal-related-377056802.jpg);
+            background-size: cover;
+        }
+        #img1{
+            width: 50%;
+            margin: auto;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0px 0px 50px hotpink;
+        }
+ </style>
+<head>
+<body>
+    <p>Ми вичаємо роботу з зображеннями</p>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <img src="https://thumbs.dreamstime.com/b/enchanted-forest-path-serene-green-nature-background-relaxation-eco-projects-vibrant-hues-soft-light-ideal-related-377056802.jpg" alt="flowers" title="flowers" id="img1">
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/5278b973057517.5bfd226687bb7.jpg" alt="flowers" title="flowers" id="img2">
+</body>
+</html>

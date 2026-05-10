@@ -1,0 +1,59 @@
+body{
+    background-color: antiquewhite;
+}
+header{
+    background-color: darkgrey;
+    height: 250px;
+
+}
+nav,aside{
+    background-color: aquamarine;
+    width: 20%;
+    float: left;
+}
+main{
+    background-color: yellow;
+    width: 60%;
+    float: left;
+}
+h2{
+    text-align: center;
+}
+article{
+    border: dashed 1px gray;
+    margin: 5px;
+    text-align: justify;
+}
+footer{
+    height: 200px;
+    background-color: lightgreen;
+    clear: both;
+}
+bgvideo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bgvideo video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+h1{
+    z-index: 2;
+    color: blanchedalmond;
+}
+/*butten*/
+.myButten{
+
+}
+.mc{
+    width: 33%;
+    display: inline-block;
+}

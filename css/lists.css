@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body{
+
+    background-color: black;
+}
+p{
+  font-size: 45px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: red;
+}
+ul,ol{
+  font-size: 45px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: red;
+}
+.l1 li::marker{
+    color: brown;
+}
+.l2 li{
+    padding-left: 16px;
+}
+ol{
+    margin-left: 80px;
+}
+@counter-style symbols {
+  system: cyclic;
+  symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+  suffix: " ";
+}
+ul.l3{
+    list-style: symbols;
+}
+
+@counter-style ukrainian-alphabetic {
+  system: alphabetic;
+  symbols: 'А' 'Б' 'В' 'Г' 'Ґ' 'Д' 'Е' 'Є' 'Ж' 'З' 'И' 'І' 'Ї' 'Й' 'К' 'Л' 'М' 'Н' 'О' 'П' 'Р' 'С' 'Т' 'У' 'Ф' 'Х' 'Ц' 'Ч' 'Ш' 'Щ' 'Ь' 'Ю' 'Я';
+  suffix: ") ";
+}
+.l4{
+    list-style: lower-ukrainian-full;
+}
+dl{
+    color: red;
+}

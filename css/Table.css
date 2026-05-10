@@ -1,0 +1,43 @@
+body{
+    background-color: blanchedalmond;
+}
+p{
+    font-size: 50px;
+    color: black;
+}
+table{
+    border: double 5px red;
+    width: 50%;
+    font-size: 24px;
+}
+th,td{
+    border: solid green 2px;
+    width: 25%;
+    height: 1cm;
+}
+tr:hover{
+    background-color: chocolate;
+}
+td:hover{
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/hd/71e70899569617.5ef58020a8e56.gif);
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.2cm;
+    color: blue;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+tr:nth-child(odd){
+    background-color: brown;
+}
+.ss{
+    border: dotted darkred;
+    text-align: right;
+    vertical-align: bottom;
+}
+caption{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 900;
+    background: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+}
