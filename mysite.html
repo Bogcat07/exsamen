@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Міні-гра: Впіймай павука PRO</title>
+    <link rel="stylesheet" href="css/mysite.css">
+
+    <link rel="icon" type="image/png" href="https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-myii-p-kartinki-pauk-dlya-detei-na-prozrachnom-fo-10.png">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000000;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #f8fafc;
+            user-select: none;
+        }
+        .game-container { text-align: center; }
+        h1 { margin-bottom: 5px; font-size: 2.5rem; color: #f8fafc; }
+        .stats-panel {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            background-color: #1e293b;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #000000;
+        }
+        .stat-item span { font-weight: bold; color: #000000; }
+        #timer span { color: #f43f5e; }
+         #game-area {
+            width: 450px;
+            height: 450px;
+            
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+
+         }
+        #target {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            position: absolute;
+            cursor: pointer;
+            transition: left 0.15s ease-out, top 0.15s ease-out, transform 0.1s;
+            display: none;
+
+
+        }
+        #target:hover { transform: scale(1.05); }
+        #target:hover { transform: scale(1.05); }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .overlay h2 { font-size: 2.5rem; margin-bottom: 10px; color: #38bdf8; }
+        .overlay p { font-size: 1.2rem; margin-bottom: 20px; }
+        .btn {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .btn:hover { background-color: #059669; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Впіймай павука!</h1>
+        <div class="stats-panel">
+            <div class="stat-item" id="timer">Час: <span id="time-left">30</span>с</div>
+            <div class="stat-item">Рахунок: <span id="score">0</span></div>
+            <div class="stat-item">Рекорд: <span id="high-score">0</span></div>
+        </div>
+        <div id="game-area">
+            <div id="target"></div>
+            <div id="game-overlay" class="overlay">
+                <h2 id="overlay-title">Готові?</h2>
+                <p id="overlay-text">У вас є 30 секунд, щоб набрати максимум балів!</p>
+                <button id="start-btn" class="btn">Старт</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const target = document.getElementById('target');
+        const scoreDisplay = document.getElementById('score');
+        const highScoreDisplay = document.getElementById('high-score');
+        const timeLeftDisplay = document.getElementById('time-left');
+        const gameArea = document.getElementById('game-area');
+        const gameOverlay = document.getElementById('game-overlay');
+        const overlayTitle = document.getElementById('overlay-title');
+        const overlayText = document.getElementById('overlay-text');
+        const startBtn = document.getElementById('start-btn');
+
+        let score = 0;
+        let highScore = localStorage.getItem('highScore') || 0;
+        let timeLeft = 30;
+        let gameInterval;
+        let isPlaying = false;
+
+        highScoreDisplay.textContent = highScore;
+
+        function moveTarget() {
+            const areaWidth = gameArea.clientWidth;
+            const areaHeight = gameArea.clientHeight;
+            const randomX = Math.floor(Math.random() * (areaWidth - 50));
+            const randomY = Math.floor(Math.random() * (areaHeight - 50));
+            target.style.left = randomX + 'px';
+            target.style.top = randomY + 'px';
+        }
+
+        function startGame() {
+            score = 0;
+            timeLeft = 30;
+            isPlaying = true;
+            scoreDisplay.textContent = score;
+            timeLeftDisplay.textContent = timeLeft;
+            gameOverlay.style.display = 'none';
+            target.style.display = 'block';
+            moveTarget();
+
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                timeLeftDisplay.textContent = timeLeft;
+                if (timeLeft <= 0) { endGame(); }
+            }, 1000);
+        }
+
+        function endGame() {
+            clearInterval(gameInterval);
+            isPlaying = false;
+            target.style.display = 'none';
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem('highScore', highScore);
+                highScoreDisplay.textContent = highScore;
+                overlayTitle.textContent = "Новий рекорд! 🎉";
+            } else {
+                overlayTitle.textContent = "Час вийшов! ⏱️";
+            }
+            overlayText.textContent ="Ваш рахунок: " + score + ". Спробуєте ще раз?";
+            startBtn.textContent = "Грати знову";
+            gameOverlay.style.display = 'flex';
+        }
+
+        target.addEventListener('click', () => {
+            if (!isPlaying) return;
+            score++;
+            scoreDisplay.textContent = score;
+            moveTarget();
+        });
+
+        startBtn.addEventListener('click', startGame);
+    </script>
+</body>
+</html>
