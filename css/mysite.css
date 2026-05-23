@@ -1,0 +1,34 @@
+#target {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    transition: left 0.15s ease-out, top 0.15s ease-out, transform 0.1s;
+    display: none;
+    background-image: url("https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-myii-p-kartinki-pauk-dlya-detei-na-prozrachnom-fo-10.png"); 
+    background-size: cover;
+    background-position: center;
+    background-color: transparent; 
+    box-shadow: none; 
+}
+
+#game-area {
+
+    background-image: url("https://images.prom.ua/4332018365_w640_h320_barhatnaya-dekorativnaya-podushka.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.stats-panel {
+
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20251117/pngtree-dark-brown-wood-grain-seamless-texture-background-image_20312358.webp"); 
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+
+    background-image: url("https://img.freepik.com/free-photo/abstract-black-gray-grunge-texture-pattern-background_84443-3266.jpg?semt=ais_hybrid&w=740&q=80"); 
+    background-size: cover;
+    background-position: center;
+}
