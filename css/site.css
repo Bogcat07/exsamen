@@ -45,7 +45,7 @@ header h1 {
 
 /* Ліве меню навігації */
 nav,aside {
-    background-color: aquamarine;
+    background-color: rgb(141, 184, 213;
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -56,14 +56,14 @@ nav,aside {
 
 /* Центральний контент */
 main {
-    background-color: yellow;
+    background-color: rgb(8, 8, 52);
     width: 60%;
     padding: 20px;
 }
 
 /* Праве бічне меню */
 aside {
-    background-color: aquamarine;
+    background-color: rgb(141, 184, 213;
     width: 20%;
     padding: 20px;
     text-align: center;
@@ -109,7 +109,7 @@ article {
 
 /* Нижній блок сайту (Футер) */
 footer {
-    background-color: lightgreen;
+    background-color: rgb(61, 122, 141);
     padding: 30px 20px;
     width: 100%;
 }
