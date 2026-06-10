@@ -75,7 +75,7 @@ h2, h3 {
 }
 
 article {
-    border: dashed 1px gray;
+    border: dashed 1px rgb(61, 122, 141);
     margin-bottom: 15px;
     padding: 10px;
     text-align: justify;
@@ -84,7 +84,7 @@ article {
 
 /* Стилізація кнопок у стовпчик */
 .butten {
-    --green: rgb(61, 122, 141);
+    --green: #0f053d;
     font-size: 14px;
     padding: 12px 5px;
     letter-spacing: 0.06em;
