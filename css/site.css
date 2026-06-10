@@ -32,7 +32,6 @@ header {
 header h1 {
     position: relative;
     z-index: 2;
-    color: rgb(8, 8, 52);
     font-size: 3rem;
 }
 
