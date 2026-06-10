@@ -153,3 +153,25 @@ footer {
 .h1 {
 color: yellowgreen;
 }
+
+header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    
+    /* Налаштування анімації */
+    animation-name: myAnimation1;
+    animation-duration: 3s;              /* Швидкість зміни (3 секунди) */
+    animation-iteration-count: infinite;  /* Повторювати БЕЗЛІЧ разів */
+    animation-direction: alternate;       /* Плавний рух туди і назад */
+    animation-timing-function: ease-in-out; /* Плавний старт і фініш */
+}
+@keyframes myAnimation1 {
+  from {
+      color: rgb(8, 8, 52); /* Перший колір (світло-кремовий) */
+  }
+  to {
+      color: rgb(141, 184, 213); /* Другий колір (жовтий) */
+  }
+}
